@@ -24,17 +24,17 @@ namespace AdessoChallenge.Controllers
         // api/calculate/1000
         public IActionResult CalculatePiNumber(int iterationCount)
         {
-            var piNumber = _calculateService.CalculatePiNumber(iterationCount);
-            return Ok(piNumber);
+            var piNumberOutput = _calculateService.CalculatePiNumber(iterationCount);
+            return Ok(piNumberOutput.piNumber);
         }
 
 
         [HttpPost]
         public IActionResult CalculatePiNumber([FromBody] CalculatePiInput input)
         {
-            var piNumber = _calculateService.CalculatePiNumber(input.IterationCount);
+            var piNumberOutput = _calculateService.CalculatePiNumber(input.IterationCount);
 
-            return Ok(piNumber);
+            return Ok(piNumberOutput.piNumber);
         }
 
 

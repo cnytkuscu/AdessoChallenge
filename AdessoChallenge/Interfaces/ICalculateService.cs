@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AdessoChallenge.DTO.CalculateObjects.CalculatePiNumberOutput;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -7,6 +8,6 @@ namespace AdessoChallenge.Interfaces
 {
     public interface ICalculateService
     {
-        decimal CalculatePiNumber(int iterationCount);
+        CalculatePiNumberOutput CalculatePiNumber(int iterationCount);
     }
 }

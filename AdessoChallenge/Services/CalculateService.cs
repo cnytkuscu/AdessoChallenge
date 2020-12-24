@@ -1,4 +1,5 @@
 ﻿
+using AdessoChallenge.DTO.CalculateObjects.CalculatePiNumberOutput;
 using AdessoChallenge.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ namespace AdessoChallenge.Services
 {
     public class CalculateService : ICalculateService
     {
-        public decimal CalculatePiNumber(int iterationCount)
+        public CalculatePiNumberOutput CalculatePiNumber(int iterationCount)
         {
             decimal pi = 0;
 
@@ -17,7 +18,8 @@ namespace AdessoChallenge.Services
             {
                 pi += 2 / (((4 * i) + 1) * ((4 * i) + 3));
             }
-            return pi * 4;
+
+            return new CalculatePiNumberOutput { piNumber = pi * 4 };
         }
     }
 }
