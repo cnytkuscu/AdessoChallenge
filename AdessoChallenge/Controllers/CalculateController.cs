@@ -20,11 +20,15 @@ namespace AdessoChallenge.Controllers
             _calculateService = calculateService;
         }
 
-        [HttpGet("{iterationCount}")]
         // api/calculate/1000
+        [HttpGet("{iterationCount}")]
         public IActionResult CalculatePiNumber(int iterationCount)
         {
-            var piNumberOutput = _calculateService.CalculatePiNumber(iterationCount);
+            if (iterationCount <= 0)
+            {
+                throw new ArgumentException("Iteration Count can not be less or equal to Zero.");
+            }
+            var piNumberOutput = _calculateService.CalculatePiNumber(new CalculatePiInput { IterationCount = iterationCount });
             return Ok(piNumberOutput.piNumber);
         }
 
@@ -32,7 +36,7 @@ namespace AdessoChallenge.Controllers
         [HttpPost]
         public IActionResult CalculatePiNumber([FromBody] CalculatePiInput input)
         {
-            var piNumberOutput = _calculateService.CalculatePiNumber(input.IterationCount);
+            var piNumberOutput = _calculateService.CalculatePiNumber(input);
 
             return Ok(piNumberOutput.piNumber);
         }

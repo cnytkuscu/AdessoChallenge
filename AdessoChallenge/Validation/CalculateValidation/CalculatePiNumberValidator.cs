@@ -11,7 +11,6 @@ namespace AdessoChallenge.Validation.CalculateValidation
     {
         public CalculatePiNumberValidator()
         {
-
             RuleFor(x => x.IterationCount)
                 .NotEmpty().WithMessage("Iteration Count can not be Empty and/or Equal to ZERO")
                 .GreaterThan(0).WithMessage("Iteration Count can not be Negative");

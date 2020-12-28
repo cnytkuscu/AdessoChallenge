@@ -8,6 +8,6 @@ namespace AdessoChallenge.DTO.CalculateObjects.CalculatePiNumberOutput
     public class CalculatePiNumberOutput
     {
         public decimal piNumber { get; set; }
-        //test output.
+        
     }
 }

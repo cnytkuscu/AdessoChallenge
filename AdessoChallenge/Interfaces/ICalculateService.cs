@@ -1,13 +1,10 @@
-﻿using AdessoChallenge.DTO.CalculateObjects.CalculatePiNumberOutput;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using AdessoChallenge.DTO.CalculateInput;
+using AdessoChallenge.DTO.CalculateObjects.CalculatePiNumberOutput;
 
 namespace AdessoChallenge.Interfaces
 {
     public interface ICalculateService
     {
-        CalculatePiNumberOutput CalculatePiNumber(int iterationCount);
+        CalculatePiNumberOutput CalculatePiNumber(CalculatePiInput iterationCount);
     }
 }
